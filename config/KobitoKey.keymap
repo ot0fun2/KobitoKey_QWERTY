@@ -30,6 +30,32 @@
             bindings = <&kp LS(TAB)>;
             key-positions = <10 11>;
         };
+
+        Kakko {
+            bindings = <&kakko>;
+            key-positions = <17 18>;
+        };
+
+        Kakko2 {
+            bindings = <&Kakko2>;
+            key-positions = <7 8>;
+        };
+    };
+
+    macros {
+        kakko: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            label = "NEW_MACRO";
+        };
+
+        Kakko2: Kakko2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "KAKKO2";
+        };
     };
 
     keymap {
