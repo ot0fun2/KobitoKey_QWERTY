@@ -151,10 +151,10 @@
 
         layer_4 {
             bindings = <
-&trans   &trans    &trans     &rrmmdd        &ddmm   &trans  &trans  &trans  &trans  &trans
-&At_and  &kp HASH  &kp SLASH  &kp LG(LS(S))  &trans  &trans  &trans  &trans  &trans  &kp PERCENT
-&trans   &trans    &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans   &trans    &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &trans    &trans     &rrmmdd        &ddmm   &trans  &trans           &trans  &trans  &trans
+&At_and  &kp HASH  &kp SLASH  &kp LG(LS(S))  &trans  &trans  &kp LC(LS(ESC))  &trans  &trans  &kp PERCENT
+&trans   &trans    &trans     &trans         &trans  &trans  &trans           &trans  &trans  &trans
+&trans   &trans    &trans     &trans         &trans  &trans  &trans           &trans  &trans  &trans
             >;
         };
     };
