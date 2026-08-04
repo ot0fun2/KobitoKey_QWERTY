@@ -20,16 +20,94 @@
             bindings = <&kp LANG1>;
         };
 
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <10 11>;
+            key-positions = <11 12>;
             bindings = <&kp TAB>;
+        };
+
+        combo_shifttab {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp LS(TAB)>;
+        };
+
+        combo_kakko1 {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kakko>;
+        };
+
+        combo_kakko2 {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&Kakko2>;
+        };
+
+        combo_kakko3 {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&Kakko3>;
+        };
+    };
+
+    macros {
+        kakko: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT &kp NUHS &kp LEFT>;
+            label = "NEW_MACRO";
+        };
+
+        Kakko2: Kakko2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N8) &kp LS(N9) &kp LEFT>;
+            label = "KAKKO2";
+        };
+
+        Sinwa_mail: Sinwa_mail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp MINUS &kp S &kp A &kp T &kp O &kp AT &kp S &kp I &kp N &kp W &kp A &kp DOT &kp J &kp P>;
+            label = "SINWA_MAIL";
+        };
+
+        Mymail: Mymail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp T &kp N0 &kp DOT &kp F &kp U &kp N &kp DOT &kp N2 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "MYMAIL";
+        };
+
+        Kakko3: Kakko3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>;
+            label = "KAKKO3";
+        };
+
+        rrmmdd: rrmmdd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp R>;
+            label = "REIWA";
+        };
+
+        ddmm: ddmm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp T>;
+            label = "DDMM";
+        };
+    };
+
+    behaviors {
+        At_and: At_and {
+            compatible = "zmk,behavior-tap-dance";
+            label = "AT_AND";
+            #binding-cells = <0>;
+            bindings = <&kp AT>, <&kp AMPERSAND>;
         };
     };
 
@@ -38,40 +116,50 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W     &kp E     &kp R        &kp T      &kp Y     &kp U        &kp I      &kp O      &kp P
-&kp A      &kp S     &kp D     &kp F        &kp G      &kp H     &kp J        &kp K      &kp L      &kp SEMI
-&kp Z      &kp X     &kp C     &kp V        &kp B      &kp N     &kp M        &kp COMMA  &kp DOT    &kp APOS
-&kp LSHFT  &kp LALT  &kp LCMD  &lt 2 SPACE  &kp LCTRL  &kp BSPC  &lt 1 ENTER  &kp RSHFT  &kp RSHFT  &mt LALT SLASH
+&kp Q      &kp W         &kp E        &kp R        &kp T       &kp Y     &kp U        &kp I      &kp O      &kp MINUS
+&kp A      &kp S         &kp D        &kp F        &kp G       &kp H     &kp J        &kp K      &kp L      &kp P
+&kp Z      &kp X         &kp C        &kp V        &kp B       &kp N     &kp M        &kp COMMA  &kp DOT    &kp SEMI
+&kp LSHFT  &kp LEFT_GUI  &lt 4 LCTRL  &lt 1 SPACE  &kp ESCAPE  &kp BSPC  &lt 2 ENTER  &kp DEL    &kp RSHFT  &mt LALT SLASH
             >;
         };
 
         layer1 {
             label = "NUMBER";
             bindings = <
-&kp N0     &kp N1  &kp N2  &kp N3     &trans  &kp MINUS  &trans     &kp UP    &trans     &trans
-&kp EQUAL  &kp N4  &kp N5  &kp N6     &trans  &kp PLUS   &kp LEFT   &kp DOWN  &kp RIGHT  &trans
-&trans     &kp N7  &kp N8  &kp N9     &trans  &kp ASTRK  &kp SLASH  &kp LBKT  &kp RBKT   &trans
-&trans     &trans  &trans  &kp LSHFT  &trans  &trans     &trans     &trans    &trans     &trans
+&kp LC(HOME)     &kp HOME          &kp UP    &kp END            &kp LC(END)      &kp PLUS      &kp N7        &kp N8        &kp N9        &kp ASTERISK
+&kp PAGE_UP      &kp LEFT          &kp DOWN  &kp RIGHT          &kp PAGE_DOWN    &kp KP_EQUAL  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp SLASH
+&kp LC(PAGE_UP)  &kp LC(LG(LEFT))  &none     &kp LC(LG(RIGHT))  &kp LC(PAGE_UP)  &kp MINUS     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SQT
+&trans           &trans            &trans    &kp LSHFT          &trans           &trans        &kp INT_RO    &kp N0        &kp PERIOD    &trans
             >;
         };
 
         layer2 {
             label = "FUNCTION";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
-&trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
-&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3    &kp F4           &kp F5
+&trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8    &kp F9           &kp F10
+&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &kp RBKT  &kp NON_US_HASH  &trans
+&trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans    &trans           &trans
             >;
         };
 
         layer3 {
             label = "MOUSE";
             bindings = <
-&trans     &trans  &trans    &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans     &trans  &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans     &trans  &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&kp LSHFT  &trans  &kp LCMD  &kp LALT  &to 0   &trans  &trans    &trans    &to 0     &kp RALT
+&trans     &trans  &trans  &trans    &trans  &kp LC(C)  &mkp MB1  &mkp MB3  &mkp MB2   &kp KP_ENTER
+&trans     &trans  &trans  &trans    &trans  &kp LC(V)  &none     &none     &kp LC(A)  &kp DEL
+&trans     &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans     &trans
+&kp LSHFT  &trans  &trans  &kp LALT  &to 0   &trans     &trans    &trans    &to 0      &kp RALT
+            >;
+        };
+
+        layer4 {
+            label = "KIGOU";
+            bindings = <
+&trans   &trans    &trans     &rrmmdd        &ddmm    &trans  &trans           &trans  &trans  &trans
+&At_and  &kp HASH  &kp SLASH  &kp LG(LS(S))  &trans   &trans  &kp LC(LS(ESC))  &trans  &trans  &kp PERCENT
+&trans   &trans    &trans     &trans         &trans   &trans  &trans           &trans  &trans  &trans
+&trans   &trans    &trans     &trans         &trans   &trans  &trans           &trans  &trans  &trans
             >;
         };
     };
