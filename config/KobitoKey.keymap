@@ -82,6 +82,20 @@
             bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>;
             label = "KAKKO3";
         };
+
+        rrmmdd: Reiwa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp R>;
+            label = "REIWA";
+        };
+
+        ddmm: ddmm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp T>;
+            label = "DDMM";
+        };
     };
 
     behaviors {
@@ -137,10 +151,10 @@
 
         layer_4 {
             bindings = <
-&trans   &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&At_and  &kp HASH  &kp SLASH  &trans  &trans  &trans  &trans  &trans  &trans  &kp PERCENT
-&trans   &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans   &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &trans    &trans     &rrmmdd        &ddmm   &trans  &trans  &trans  &trans  &trans
+&At_and  &kp HASH  &kp SLASH  &kp LG(LS(S))  &trans  &trans  &trans  &trans  &trans  &kp PERCENT
+&trans   &trans    &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &trans    &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
