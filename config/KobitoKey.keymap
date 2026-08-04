@@ -51,7 +51,7 @@
         kakko: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RBKT &kp RBKT &kp LEFT>;
+            bindings = <&kp RBKT &kp NUHS &kp LEFT>;
             label = "NEW_MACRO";
         };
 
