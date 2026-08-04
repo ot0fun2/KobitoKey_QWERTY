@@ -148,7 +148,7 @@
             >;
         };
 
-        Layer_3 {
+        MOUSE {
             label = "MOUSE";
             bindings = <
 &trans     &trans  &trans  &trans    &trans  &kp LC(C)  &mkp MB1  &mkp MB3  &mkp MB2   &kp KP_ENTER
