@@ -116,50 +116,49 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W         &kp E        &kp R        &kp T       &kp Y     &kp U        &kp I      &kp O      &kp MINUS
-&kp A      &kp S         &kp D        &kp F        &kp G       &kp H     &kp J        &kp K      &kp L      &kp P
-&kp Z      &kp X         &kp C        &kp V        &kp B       &kp N     &kp M        &kp COMMA  &kp DOT    &kp SEMI
-&kp LSHFT  &kp LEFT_GUI  &lt 4 LCTRL  &lt 1 SPACE  &kp ESCAPE  &kp BSPC  &lt 2 ENTER  &kp DEL    &kp RSHFT  &mt LALT SLASH
+&kp Q      &kp W         &kp E        &kp R        &kp T          &kp Y     &kp U        &kp I      &kp O      &kp MINUS
+&kp A      &kp S         &kp D        &kp F        &kp G          &kp H     &kp J        &kp K      &kp L      &kp P
+&kp Z      &kp X         &kp C        &kp V        &kp B          &kp N     &kp M        &kp COMMA  &kp DOT    &kp SEMI
+&kp LSHFT  &kp LEFT_GUI  &lt 4 LCTRL  &lt 1 SPACE  &mt LCTRL ESC  &kp BSPC  &lt 2 ENTER  &kp DEL    &kp RSHFT  &mt LALT SLASH
             >;
         };
 
-        layer1 {
+        NUMBER {
             label = "NUMBER";
             bindings = <
-&kp LC(HOME)     &kp HOME          &kp UP    &kp END            &kp LC(END)      &kp PLUS      &kp N7        &kp N8        &kp N9        &kp ASTERISK
-&kp PAGE_UP      &kp LEFT          &kp DOWN  &kp RIGHT          &kp PAGE_DOWN    &kp KP_EQUAL  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp SLASH
-&kp LC(PAGE_UP)  &kp LC(LG(LEFT))  &none     &kp LC(LG(RIGHT))  &kp LC(PAGE_UP)  &kp MINUS     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SQT
-&trans           &trans            &trans    &kp LSHFT          &trans           &trans        &kp INT_RO    &kp N0        &kp PERIOD    &trans
+&kp LC(HOME)     &kp HOME          &kp UP    &kp END            &kp LC(END)      &kp COLON     &kp N7          &kp N8        &kp N9        &kp ASTERISK
+&kp PAGE_UP      &kp LEFT          &kp DOWN  &kp RIGHT          &kp PAGE_DOWN    &kp KP_EQUAL  &kp NUMBER_4    &kp N5        &kp NUMBER_6  &kp SLASH
+&kp LC(PAGE_UP)  &kp LC(LG(LEFT))  &none     &kp LC(LG(RIGHT))  &kp LC(PAGE_UP)  &kp MINUS     &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp SQT
+&kp LSHFT        &none             &none     &none              &none            &none         &kp UNDERSCORE  &kp N0        &kp PERIOD    &none
             >;
         };
 
-        layer2 {
+        Fn-BLE {
             label = "FUNCTION";
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3    &kp F4           &kp F5
-&trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8    &kp F9           &kp F10
-&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &kp RBKT  &kp NON_US_HASH  &trans
-&trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans    &trans           &trans
+&none         &none         &none         &none         &bt BT_CLR      &kp F6   &kp F7   &kp F8    &kp F9           &kp F10
+&none         &none         &none         &none         &bt BT_CLR_ALL  &kp F11  &kp F12  &kp RBKT  &kp NON_US_HASH  &none
+&none         &none         &none         &none         &none           &kp DEL  &none    &none     &none            &none
             >;
         };
 
-        layer3 {
+        MOUSE {
             label = "MOUSE";
             bindings = <
-&trans     &trans  &trans  &trans    &trans  &kp LC(C)  &mkp MB1  &mkp MB3  &mkp MB2   &kp KP_ENTER
-&trans     &trans  &trans  &trans    &trans  &kp LC(V)  &none     &none     &kp LC(A)  &kp DEL
-&trans     &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans     &trans
-&kp LSHFT  &trans  &trans  &kp LALT  &to 0   &trans     &trans    &trans    &to 0      &kp RALT
+&none      &none  &none  &none     &none  &kp LC(C)  &mkp MB1  &mkp MB3  &mkp MB2   &kp KP_ENTER
+&none      &none  &none  &none     &none  &kp LC(P)  &none     &none     &kp LC(A)  &kp DEL
+&none      &none  &none  &none     &none  &none      &none     &none     &none      &none
+&kp LSHFT  &none  &none  &kp LALT  &to 0  &none      &none     &none     &to 0      &kp RALT
             >;
         };
 
-        layer4 {
-            label = "KIGOU";
+        KIGOU {
             bindings = <
-&trans   &trans    &trans     &rrmmdd        &ddmm    &trans  &trans           &trans  &trans  &trans
-&At_and  &kp HASH  &kp SLASH  &kp LG(LS(S))  &trans   &trans  &kp LC(LS(ESC))  &trans  &trans  &kp PERCENT
-&trans   &trans    &trans     &trans         &trans   &trans  &trans           &trans  &trans  &trans
-&trans   &trans    &trans     &trans         &trans   &trans  &trans           &trans  &trans  &trans
+&none    &none     &none      &rrmmdd        &ddmm  &none  &none            &none  &none  &none
+&At_and  &kp HASH  &kp SLASH  &kp LG(LS(S))  &none  &none  &kp LC(LS(ESC))  &none  &none  &kp PERCENT
+&none    &none     &none      &none          &none  &none  &none            &none  &none  &none
+&none    &none     &none      &none          &none  &none  &none            &none  &none  &none
             >;
         };
     };
