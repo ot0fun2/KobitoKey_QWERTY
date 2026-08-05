@@ -87,27 +87,44 @@
             label = "KAKKO3";
         };
 
-        rrmmdd: rrmmdd {
+rrmmdd: rrmmdd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp R>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp INT_HENKAN>
+                , <&macro_tap &kp R>
+                , <&macro_release &kp INT_HENKAN>
+                ;
             label = "REIWA";
         };
 
         ddmm: ddmm {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp T>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp INT_HENKAN>
+                , <&macro_tap &kp T>
+                , <&macro_release &kp INT_HENKAN>
+                ;
             label = "DDMM";
         };
 
         kakeru: kakeru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp K>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp INT_HENKAN>
+                , <&macro_tap &kp K>
+                , <&macro_release &kp INT_HENKAN>
+                ;
             label = "KAKERU";
         };
-    };
 
     behaviors {
         At_and: At_and {
