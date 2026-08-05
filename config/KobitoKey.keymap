@@ -100,6 +100,13 @@
             bindings = <&kp INT_HENKAN &kp T>;
             label = "DDMM";
         };
+
+        kakeru: kakeru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp K>;
+            label = "KAKERU";
+        };
     };
 
     behaviors {
@@ -126,10 +133,10 @@
         NUMBER {
             label = "NUMBER";
             bindings = <
-&kp LC(HOME)     &kp HOME          &kp UP    &kp END            &kp LC(END)      &kp COLON     &kp N7          &kp N8        &kp N9        &kp ASTERISK
-&kp PAGE_UP      &kp LEFT          &kp DOWN  &kp RIGHT          &kp PAGE_DOWN    &kp KP_EQUAL  &kp NUMBER_4    &kp N5        &kp NUMBER_6  &kp SLASH
-&kp LC(PAGE_UP)  &kp LC(LG(LEFT))  &none     &kp LC(LG(RIGHT))  &kp LC(PAGE_UP)  &kp MINUS     &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp SQT
-&kp LSHFT        &none             &none     &none              &none            &none         &kp UNDERSCORE  &kp N0        &kp PERIOD    &none
+&kp LC(HOME)     &kp HOME          &kp UP    &kp END            &kp LC(END)      &kp COLON       &kp N7          &kp N8        &kp N9        &kp KP_MULTIPLY
+&kp PAGE_UP      &kp LEFT          &kp DOWN  &kp RIGHT          &kp PAGE_DOWN    &kp UNDERSCORE  &kp NUMBER_4    &kp N5        &kp NUMBER_6  &kp KP_DIVIDE
+&kp LC(PAGE_UP)  &kp LC(LG(LEFT))  &none     &kp LC(LG(RIGHT))  &kp LC(PAGE_UP)  &kp MINUS       &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp KP_DOT
+&kp LSHFT        &none             &none     &none              &none            &trans          &kp LS(INT_RO)  &kp N0        &kp PERIOD    &kakeru
             >;
         };
 
