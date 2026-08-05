@@ -33,7 +33,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <200>;
+        cpi = <600>;
         
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
@@ -44,5 +44,6 @@
 &tb_right_split {
     device = <&tb_right>;
 
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+    /* 移動量を1/4に減速（実質400 CPI相当） */
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_scaler 1 4>;
 };
